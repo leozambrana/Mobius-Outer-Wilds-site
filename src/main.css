@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.natas{
-    display: flex !important;
-    flex: 1 !important; 
+.shadow-bottom{
+    box-shadow: inset 0px -25px 31px -36px #fff;
 }
