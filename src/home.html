@@ -6,11 +6,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/dist/output.css">
+    <style>
+        .my-animation{
+            animation: 3s linear 0s spin;
+            position: relative;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hidden {
+            visibility: hidden;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            backdrop-filter: blur(2px);
+            background-color: rgba(0, 0, 0, .5);
+        }
+
+        .overlay div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            gap: 8px;
+        }
+
+        .overlay .btn-previous {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 32px;
+            margin: 1rem;
+        }
+
+        .overlay .btn-next {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 32px;
+            margin: 1rem;
+        }
+
+        .go-to-top-btn {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin: 1rem;
+            border-radius: 50%;
+            background-color: #333333;
+            color: white;
+            width: 40px;
+            height: 40px;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+        
+        header nav {
+            min-height: 100px;
+        }
+    </style>
 </head>
 <body>
+    <div class="top"/>
     <header class="bg-black shadow-bottom">
         <nav class=" flex justify-between items-center">
-            <button>
+            <button class="absolute">
                 <a href="">
                     <img class="scale-50" src="./img/mobius-logo-long_1.png" alt="Mobius">
                 </a>
@@ -39,7 +118,7 @@
     <main style="background-image: url('/src/img/stars.PNG');">
         <div class=" flex items-center">
                 <img class="scale-50" src="./img/logo_outer.png" alt="Outer Wilds">
-                <img src="/src/img/HD-wallpaper-video-game-outer-wilds.jpg" alt="">
+                <img class="outer-wilds-world-img" src="/src/img/HD-wallpaper-video-game-outer-wilds.jpg" alt="" onclick="animateImage()">
         </div>
             <div class="text-xl text-gray-300">
                 <div class="grid grid-cols-2 items-center ml-8">
@@ -95,6 +174,8 @@
 
                             <!-- Resumo Jogo -->
 
+                        <button class="flex m-auto" onclick="setOverlayVisible()">Álbum de fotos</button>
+
                         <div class="flex items-center">
                             <div class="ml-8">
                                 <h2 class="  text-2xl font-extrabold "> Bem-vindo ao Programa Espacial </h2>
@@ -132,23 +213,85 @@
             </div>
     </main>
 
-        <!-- Footer -->
+    <!-- Footer -->
 
-        <footer style="background-image: url('./img/stars.PNG');">
-            <hr class="h-[1px] bg-gray-600 ">
-                <p class="text-opacity-50 text-white text-center mt-[50px]"> Me siga nas Redes Sociais </p>
-                <span class="flex gap-5 justify-center my-5">
-                     <a target="_blank" href="https://www.instagram.com/leoczambrana/">
-                        <img src="./img/logoInsta.png" alt="">
-                     </a>
-                     <a target="_blank" href="">
-                        <img src="./img/logoWhats.png" alt="">
-                     </a>
-                     <a target="_blank" href="https://www.linkedin.com/in/leonardo-zambrana-857171226/">
-                        <img src="./img/logoLinkedin.png" alt="">
-                     </a>
-                </span>
-                <p class="text-white text-center text-opacity-50 "> Copyright &copy; 2022 Zambrana, Leonardo / Alves, Natanael - Todos direitos reservados</p>
-        </footer>
+    <footer style="background-image: url('./img/stars.PNG');">
+        <hr class="h-[1px] bg-gray-600 ">
+            <p class="text-opacity-50 text-white text-center mt-[50px]"> Me siga nas Redes Sociais </p>
+            <span class="flex gap-5 justify-center my-5">
+                    <a target="_blank" href="https://www.instagram.com/leoczambrana/">
+                    <img src="./img/logoInsta.png" alt="">
+                    </a>
+                    <a target="_blank" href="">
+                    <img src="./img/logoWhats.png" alt="">
+                    </a>
+                    <a target="_blank" href="https://www.linkedin.com/in/leonardo-zambrana-857171226/">
+                    <img src="./img/logoLinkedin.png" alt="">
+                    </a>
+            </span>
+            <p class="text-white text-center text-opacity-50 "> Copyright &copy; 2022 Zambrana, Leonardo / Alves, Natanael - Todos direitos reservados</p>
+    </footer>
+
+    <div class="overlay hidden">
+        <button class="btn-previous text-white " onclick="previousImage()"><</button>
+        <div class="flex justify-center">
+            <img class="dynamic-img" src="./img/Gif_fogueira_outer.gif"/>
+        </div>
+        <button class="btn-next text-white " onclick="nextImage()">></button>
+    </div>
+
+    <button class="go-to-top-btn hidden" onclick="goToTop()">^</button>
+
+    <script>
+        const images = ['./img/Gif_fogueira_outer.gif', './img/GIF_Tornado.gif', './img/Gif_Vale_incerto.gif'];
+
+        function setOverlayVisible() {
+            document.querySelector('.overlay').classList.remove('hidden');
+
+            const handleOutsideClick = (event) => {
+                event.preventDefault()
+                console.log(document.querySelector('.overlay div'), event.target)
+                if (!document.querySelector('.btn-previous').contains(event.target) && !document.querySelector('.btn-next').contains(event.target) && !document.querySelector('.dynamic-img').contains(event.target)) {
+                    console.log('add hidden')
+                    document.querySelector('.overlay').classList.add('hidden');
+                    document.removeEventListener('click', handleOutsideClick);
+                }
+            };
+            setTimeout(() => document.addEventListener('click', handleOutsideClick), 1000)
+        }
+        
+        function nextImage() {
+            const imgElem = document.querySelector('.dynamic-img');
+            const currentIndex = images.findIndex((img) => img === imgElem.getAttribute('src'));
+            imgElem.setAttribute('src', images[currentIndex + 1] || images[0]);
+        }
+
+        function previousImage() {
+            const imgElem = document.querySelector('.dynamic-img');
+            const currentIndex = images.findIndex((img) => img === imgElem.getAttribute('src'));
+            imgElem.setAttribute('src', images[currentIndex - 1] || images[images.length - 1]);
+        }
+
+        function goToTop() {
+            document.querySelector('.top').scrollIntoView({ behavior: 'smooth' });
+
+            let isScrolling;
+
+            const handleAutoScrollEnd = () => {
+                window.clearTimeout(isScrolling);
+
+                isScrolling = setTimeout(function() {
+                    document.querySelector('.go-to-top-btn').classList.add('hidden')
+                    window.removeEventListener('scroll', handleAutoScrollEnd);
+                }, 66);
+            };
+
+            window.addEventListener('scroll', handleAutoScrollEnd, false);
+        }
+
+        document.addEventListener('scroll', () => {
+            document.querySelector('.go-to-top-btn').classList.remove('hidden');
+        })
+    </script>
 </body>
 </html>
