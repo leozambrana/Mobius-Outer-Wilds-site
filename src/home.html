@@ -4,72 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
     <link rel="stylesheet" href="/dist/output.css">
-    <style>
-        .my-animation{
-            animation: 3s linear 0s spin;
-            position: relative;
-        }
-
-        @keyframes spin {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        .hidden {
-            visibility: hidden;
-        }
-        
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            backdrop-filter: blur(2px);
-            background-color: rgba(0, 0, 0, .5);
-        }
-
-        .overlay div {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            gap: 8px;
-        }
-
-        .overlay .btn-previous {
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 32px;
-            margin: 1rem;
-        }
-
-        .overlay .btn-next {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 32px;
-            margin: 1rem;
-        }
-
-    </style>
 </head>
 <body>
-    <div class="top">
+    <span class="top">
     <header class="bg-black shadow-bottom sticky top-0 z-10">
         <nav class=" flex justify-between items-center min-h-[100px]">
             <button class="absolute">
-                <a href="">
+                <a href="./home.html">
                     <img class="scale-50" src="./img/mobius-logo-long_1.png" alt="Mobius">
                 </a>
             </button>
@@ -94,187 +37,133 @@
 
     <!-- MAIN -->
 
-    <main style="background-image: url('/src/img/stars.PNG');">
-        <div class=" flex items-center">
-                <img class="scale-50" src="./img/logo_outer.png" alt="Outer Wilds">
-                <img class="outer-wilds-world-img" src="/src/img/HD-wallpaper-video-game-outer-wilds.jpg" alt="" onclick="animateImage()">
-        </div>
-            <div class="text-xl text-gray-300">
-                <div class="grid grid-cols-2 items-center ml-8">
-                    <div class="text-center ">
-                        <h2 class="font-medium text-white text-2xl my-5 ">EXPLORE UM SISTEMA SOLAR COMO NUNCA ANTES VISTO</h2>
-                        <iframe width="745" height="480" src="https://www.youtube.com/embed/d6LGnVCL1_A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>          
-                    </div>
+<main style="background-image: url('/src/img/stars.PNG');">
+    <section class=" flex items-center">
+            <img class="scale-50" src="./img/logo_outer.png" alt="Outer Wilds">
+            <img class="outer-wilds-world-img" src="/src/img/HD-wallpaper-video-game-outer-wilds.jpg" alt="" onclick="animateImage()">
+    </section>
+    <section class="text-xl text-gray-300">
+        <section class="grid grid-cols-2 items-center ml-8">
+            <article class="text-center ">
+                <h2 class="font-medium text-white text-2xl my-5 ">EXPLORE UM SISTEMA SOLAR COMO NUNCA ANTES VISTO</h2>
+                <iframe width="745" height="480" src="https://www.youtube.com/embed/2EnIpUkQ__M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>        
+            </article>
 
-                        <!-- Annapurna  -->  
+                <!-- Annapurna  -->  
 
-                    <div class="text-center mx-auto ">
-                        <p> Estamos muito orgulhosos de <br> nossa colaboração com a <br>
-                            <a class="italic underline hover:text-cyan-900 " href="https://annapurna.pictures/interactive/">Annapurna Interactive </a>em Outer Wilds
-                        </p>
-                        <a  href="https://annapurna.pictures/interactive/">
-                            <img  src="./img/annapurna_logopng-removebg-preview.png" alt="Annapurna Logo">
-                        </a>
-                        <p> Com a ajuda deles e o apoio contínuo <br> de nossos apoiadores, lançamos Outer Wilds <br> em 30 de maio de 2019!</p>
-                        <div class="italic text-base  ">
-                            <span class="text-red-500">*</span> INDICA CAMPO OBRIGATÓRIO 
-                            <div >
-                                <input class="bg-black rounded border-[2px] border-white border-opacity-50 hover:border-white  focus:text-white   " type="text"  placeholder=" *Email">
-                                <button class="bg-gray-600 rounded  text-white  ">Subscribe</button>
-                            </div>
-                        </div> 
-                    </div>   
+            <article class="text-center mx-auto ">
+                <p> Estamos muito orgulhosos de <br> nossa colaboração com a <br>
+                    <a class="italic underline hover:text-cyan-900 " href="https://annapurna.pictures/interactive/">Annapurna Interactive </a>em Outer Wilds
+                </p>
+                <a  href="https://annapurna.pictures/interactive/">
+                    <img  src="./img/annapurna_logopng-removebg-preview.png" alt="Annapurna Logo">
+                </a>
+                <p> Com a ajuda deles e o apoio contínuo <br> de nossos apoiadores, lançamos Outer Wilds <br> em 30 de maio de 2019!</p>
+            </article>   
 
-                    <!-- Premios -->
-                        
-                    <div class="text-center py-2">
-                        <div>
-                            <p>
-                                Vencedor de Melhor Jogo no BAFTA Games Awards 2020 e nomeado Jogo do Ano 2019
-                                pela Giant Bomb, Polygon, Eurogamer e The Guardian,  Outer Wilds  é um mistério de mundo aberto 
-                                aclamado pela  crítica e premiado sobre um sistema solar preso em um loop de tempo sem fim.
-                            </p>
-                            <img class="m-auto py-4" src="./img/Award.png" alt="">
-                        </div>
-                    </div>
-
-                </div>
+            <!-- Premios -->
                 
-                <!-- Plataformas -->
+            <article class="text-center py-2">                 
+                    <p>
+                        Vencedor de Melhor Jogo no BAFTA Games Awards 2020 e nomeado Jogo do Ano 2019
+                        pela Giant Bomb, Polygon, Eurogamer e The Guardian,  Outer Wilds  é um mistério de mundo aberto 
+                        aclamado pela  crítica e premiado sobre um sistema solar preso em um loop de tempo sem fim.
+                    </p>
+                    <img class="m-auto py-4" src="./img/Award.png" alt="">
+            </article>
 
-                <div class="grid grid-cols-2 grid-rows-3 w-fit items-center text-center ml-8">
-                    <h3 class="col-span-2 justify-self-center">DISPONÍVEL AGORA NA:</h3>                        
-                    <img class=" justify-self-center h-[200px]" src="./img/ps4_logo-removebg-preview.png" alt="PS4 Logo">
-                    <img class=" justify-self-center" src="./img/logoXbox.png"  alt="Xbox Logo">
-                    <img class=" justify-self-center" src="./img/logoEpicGames.png" alt="Epic Games Logo">
-                    <img class=" justify-self-center" src="./img/logoSteam.png" alt="Xbox Logo">      
-                </div>
-                    <hr class="my-5 h-[1px] bg-gray-600 ">
+        </section>
+        
+        <!-- Plataformas -->
 
-                            <!-- Resumo Jogo -->
+        <figure class="grid grid-cols-2 grid-rows-3 w-fit items-center text-center ml-8">
+            <figcaption class="col-span-2 justify-self-center">DISPONÍVEL AGORA NA:</figcaption>                        
+            <img class=" justify-self-center h-[200px]" src="./img/ps4_logo-removebg-preview.png" alt="PS4 Logo">
+            <img class=" justify-self-center" src="./img/logoXbox.png"  alt="Xbox Logo">
+            <img class=" justify-self-center" src="./img/logoEpicGames.png" alt="Epic Games Logo">
+            <img class=" justify-self-center" src="./img/logoSteam.png" alt="Xbox Logo">      
+        </figure>
+            <hr class="my-5 h-[1px] bg-gray-600 ">
 
-                        <div class="flex items-center">
-                            <div class="ml-8">
-                                <h2 class="  text-2xl font-extrabold "> Bem-vindo ao Programa Espacial </h2>
-                            <p class=" mt-6 font-extralight">
-                                Você é o mais novo membro da Outer Wilds Ventures, um programa espacial incipiente em <br> 
-                                busca de respostas em um sistema solar estranho e em constante mudança. Quem construiu <br>
-                                as ruínas  na lua? O que se esconde no coração do Abrolho Sombrio? Por que você está preso <br>
-                                em um loop de tempo e pode ser interrompido? Para resolver esses mistérios, você terá que se <br>
-                                aventurar nos confins mais perigosos do espaço.
-                            </p>
-                            </div>
-                            <img class="m-auto rounded-md" src="./img/Gif_fogueira_outer.gif" alt="Outer Wilds gif">
-                        </div>   
-                        <div class="mt-20 flex">
-                            <div>
-                                <h3 class="text-2xl font-extrabold ml-8 " > Um mundo que muda com o tempo </h3>
-                                <p class="ml-8 font-extralight">
-                                Os planetas de Outer Wilds estão repletos de locais ocultos que mudam com o passar do tempo. <br>
-                                Visite uma cidade subterrânea antes que ela seja engolida pela areia subindo ou explore a crosta <br>
-                                de um planeta oco enquanto ele desmorona sob seus pés. Cada segredo é guardado por <br> ambientes 
-                                perigosos e desastres naturais à medida que o sistema solar fica fora de controle.
-                                </p>
-                            </div> 
+                    <!-- Resumo Jogo -->
 
-                            <button class="flex m-auto" onclick="setOverlayVisible()">Álbum de fotos</button>
-                        </div>
-
-                        <div class="flex my-10 ml-8 gap-10">
-                            <img src="./img/GIF_Tornado.gif" alt="Tornado Outer Wilds">
-                            <img src="./img/Gif_Vale_incerto.gif" alt="Vale Incerto Outer Wilds">
-                        </div>   
-
-                        <!--Aventura que precisamos -->           
-                    <h4 class=" text-2xl font-extrabold text-center mb-10">Esta é a aventura que todos precisamos</h4>
-                    <div class="flex justify-evenly">
-                        <img class="rounded-md h-[400px]" src="./img/timberHeart.jpg" alt="">
-                        <img class="rounded-md h-[400px]" src="./img/Astronaut.jpg" alt="FanArt Outer Wilds">
+            <section>
+                <article class="flex items-center">
+                    <div class="ml-8">
+                        <h2 class="  text-2xl font-extrabold "> Bem-vindo ao Programa Espacial </h2>
+                        <p class=" mt-6 font-extralight">
+                            Você é o mais novo membro da Outer Wilds Ventures, um programa espacial incipiente em <br> 
+                            busca de respostas em um sistema solar estranho e em constante mudança. Quem construiu <br>
+                            as ruínas  na lua? O que se esconde no coração do Abrolho Sombrio? Por que você está preso <br>
+                            em um loop de tempo e pode ser interrompido? Para resolver esses mistérios, você terá que se <br>
+                            aventurar nos confins mais perigosos do espaço.
+                        </p>
                     </div>
-                        <button class="py-10 block mx-auto"> <a class="hover:opacity-60 animate-pulse" target="_blank" href="https://store.steampowered.com/app/753640/Outer_Wilds/">Comprar</a> </button>                           
-            </div>
-    </main>
+                    <img class="m-auto rounded-md" src="./img/Gif_fogueira_outer.gif" alt="Outer Wilds gif">
+                </article>   
+                <article class="mt-20 flex-col">
+                    <h3 class="text-2xl font-extrabold ml-8 " > Um mundo que muda com o tempo </h3>
+                    <p class="ml-8 font-extralight">
+                        Os planetas de Outer Wilds estão repletos de locais ocultos que mudam com o passar do tempo. <br>
+                        Visite uma cidade subterrânea antes que ela seja engolida pela areia subindo ou explore a crosta <br>
+                        de um planeta oco enquanto ele desmorona sob seus pés. Cada segredo é guardado por <br> ambientes 
+                        perigosos e desastres naturais à medida que o sistema solar fica fora de controle.
+                    </p> 
+                    <div class="flex my-10 ml-8 gap-10">
+                        <img src="./img/GIF_Tornado.gif" alt="Tornado Outer Wilds">
+                        <img src="./img/Gif_Vale_incerto.gif" alt="Vale Incerto Outer Wilds">
+                    </div>   
+                </article>
+            </section>
+
+                
+
+                <!--Aventura que precisamos -->           
+            <h4 class=" text-2xl font-extrabold text-center mb-10">Esta é a aventura que todos precisamos</h4>
+            <section class="flex justify-evenly text-center">
+                <figure>
+                    <img class="rounded-md h-[400px]" src="./img/timberHeart.jpg" alt="">
+                    <button class="py-5" onclick="setOverlayVisible()">Álbum de fotos</button>
+                </figure>
+                <figure>
+                    <img class="rounded-md h-[400px]" src="./img/Astronaut.jpg" alt="FanArt Outer Wilds">
+                    <button class="py-5" > <a class="hover:opacity-60 animate-pulse" target="_blank" href="https://store.steampowered.com/app/753640/Outer_Wilds/">Comprar</a> </button>    
+                </figure>
+            </section>
+    </section>
+</main>
 
     <!-- Footer -->
 
-    <footer style="background-image: url('./img/stars.PNG');">
-        <hr class="h-[1px] bg-gray-600 ">
-            <p class="text-opacity-50 text-white text-center mt-[50px]"> Me siga nas Redes Sociais </p>
-            <span class="flex gap-5 justify-center my-5">
-                    <a target="_blank" href="https://www.instagram.com/leoczambrana/">
-                    <img src="./img/logoInsta.png" alt="">
-                    </a>
-                    <a target="_blank" href="">
-                    <img src="./img/logoWhats.png" alt="">
-                    </a>
-                    <a target="_blank" href="https://www.linkedin.com/in/leonardo-zambrana-857171226/">
-                    <img src="./img/logoLinkedin.png" alt="">
-                    </a>
-            </span>
-            <p class="text-white text-center text-opacity-50 "> Copyright &copy; 2022 Zambrana, Leonardo / Alves, Natanael - Todos direitos reservados</p>
-    </footer>
+<footer class="border-t border-bg-gray-600" style="background-image: url('./img/stars.PNG');">
+        <p class="text-opacity-50 text-white text-center mt-[50px]"> Me siga nas Redes Sociais </p>
+        <address class="flex gap-5 justify-center my-5">
+                <a target="_blank" href="https://www.instagram.com/leoczambrana/">
+                <img src="./img/logoInsta.png" alt="">
+                </a>
+                <a target="_blank" href="">
+                <img src="./img/logoWhats.png" alt="">
+                </a>
+                <a target="_blank" href="https://www.linkedin.com/in/leonardo-zambrana-857171226/">
+                <img src="./img/logoLinkedin.png" alt="">
+                </a>
+        </address>
+        <p class="text-white text-center text-opacity-50 "> Copyright &copy; 2022 Zambrana, Leonardo / Alves, Natanael - Todos direitos reservados</p>
+</footer>
 
-    <div class="overlay hidden">
-        <button class="btn-previous text-white " onclick="previousImage()"><</button>
-        <div class="flex justify-center">
-            <img class="dynamic-img" src="./img/Gif_fogueira_outer.gif"/>
-        </div>
-        <button class="btn-next text-white " onclick="nextImage()">></button>
-    </div>
+<!-- OVERLAY -->
 
-    <button class="go-to-top-btn hidden fixed bottom-0 right-0 m-4 rounded-full bg-[#333333] text-white w-[40px] h-[40px]" onclick="goToTop()">^</button>
+<div class="overlay invisible">
+    <button class="btn-previous text-white absolute left-0 top-1/2 -translate-y-1/2 text-4xl m-4" onclick="previousImage()"><</button>    
+        <img class="dynamic-img absolute top-1/2 left-1/2 gap-8 -translate-x-1/2 -translate-y-1/2" src="./img/ow-ashtwin.png"/>
+    <button class="btn-next text-white absolute right-0 top-1/2 -translate-y-1/2 text-4xl m-4" onclick="nextImage()">></button>
+</div>
 
-    <script>
-        const images = ['./img/Gif_fogueira_outer.gif' ,'./img/ow-ashtwin.png', './img/ow-escapepod.png', './img/ow-giantsdeepruins.png' , './img/ow-shipinterior.png',
-         './img/ow-skeleton.png', './img/ow-village.png'];
+<!-- BUTTON TOP -->
 
-        function setOverlayVisible() {
-            document.querySelector('.overlay').classList.remove('hidden');
+<button class="go-to-top-btn invisible fixed bottom-0 right-0 m-4 rounded-full bg-[#333333] text-white w-[40px] h-[40px]" onclick="goToTop()">^</button>
 
-            const handleOutsideClick = (event) => {
-                event.preventDefault()
-                console.log(document.querySelector('.overlay div'), event.target)
-                if (!document.querySelector('.btn-previous').contains(event.target) && !document.querySelector('.btn-next').contains(event.target) && !document.querySelector('.dynamic-img').contains(event.target)) {
-                    console.log('add hidden')
-                    document.querySelector('.overlay').classList.add('hidden');
-                    document.removeEventListener('click', handleOutsideClick);
-                }
-            };
-            setTimeout(() => document.addEventListener('click', handleOutsideClick), 1000)
-        }
-        
-        function nextImage() {
-            const imgElem = document.querySelector('.dynamic-img');
-            const currentIndex = images.findIndex((img) => img === imgElem.getAttribute('src'));
-            imgElem.setAttribute('src', images[currentIndex + 1] || images[0]);
-        }
+<script src="./script.js"></script>
 
-        function previousImage() {
-            const imgElem = document.querySelector('.dynamic-img');
-            const currentIndex = images.findIndex((img) => img === imgElem.getAttribute('src'));
-            imgElem.setAttribute('src', images[currentIndex - 1] || images[images.length - 1]);
-        }
-
-        function goToTop() {
-            document.querySelector('.top').scrollIntoView({ behavior: 'smooth' });
-
-            let isScrolling;
-
-            const handleAutoScrollEnd = () => {
-                window.clearTimeout(isScrolling);
-
-                isScrolling = setTimeout(function() {
-                    document.querySelector('.go-to-top-btn').classList.add('hidden')
-                    window.removeEventListener('scroll', handleAutoScrollEnd);
-                }, 66);
-            };
-
-            window.addEventListener('scroll', handleAutoScrollEnd, false);
-        }
-
-        document.addEventListener('scroll', () => {
-            document.querySelector('.go-to-top-btn').classList.remove('hidden');
-        })
-    </script>
 </body>
 </html>

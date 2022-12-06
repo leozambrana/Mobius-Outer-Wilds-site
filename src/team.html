@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="/dist/output.css">
 </head>
 <body>
-    <header class="bg-black shadow-bottom">
-        <nav class=" flex justify-between items-center">
-            <button>
-                <a href="">
+    <header class="bg-black shadow-bottom sticky top-0 z-10">
+        <nav class=" flex justify-between items-center min-h-[100px]">
+            <button class="absolute">
+                <a href="./home.html">
                     <img class="scale-50" src="./img/mobius-logo-long_1.png" alt="Mobius">
                 </a>
             </button>
@@ -31,41 +31,54 @@
                             <a href="contact.html">Contact</a>
                     </li>
                 </ul>
-        </nav>           
+        </nav>         
     </header>
 
     <!-- Main -->
 
     <main style="background-image: url('./img/stars.PNG')">
-        <div class="flex justify-evenly ">
-            <div class="text-center">
-                <img class="w-[300px]  rounded-l-full object-contain " src="./img/Foto_leo.png" alt="">
-                <h2 class="text-white">Leonardo Caldieraro Zambrana</h2>
-            </div>
-            <div>
-                <h2></h2>
-                <img class="h-[400px]" src="./img/Foto_natanael.png" alt="">
-            </div>
-        </div>
+        <section class="flex justify-evenly items-center py-24 text-center text-white">
+            <article>
+                <img class=" w-[300px] h-[320px] rounded-full" src="./img/Foto_leo.png" alt="Foto leo">
+                <div>
+                    <h2 class="text-2xl">Leonardo Caldieraro Zambrana</h2>
+                    <p>Redes Sociais para contato</p>
+                    <span class="flex justify-center gap-10">
+                        <img src="./img/logoInsta.png" alt="instagram">
+                        <img src="./img/logoLinkedin.png" alt="Linkedin">
+                    </span>
+                </div>     
+            </article>
+            <article>
+                <img class=" w-[300px] h-[320px] rounded-full" src="./img/Foto_natanael.png" alt="Foto natanel">
+                <div>
+                    <h2 class="text-2xl">Natanael Alves Gabriel</h2>
+                    <p>Redes Sociais para contato</p>
+                    <span class="flex justify-center gap-10">
+                        <img src="./img/logoInsta.png" alt="instagram">
+                        <img src="./img/logoLinkedin.png" alt="Linkedin">
+                    </span>
+                </div>     
+            </article>
+        </section>
     </main>
 
      <!-- Footer -->
 
-     <footer style="background-image: url('./img/stars.PNG');">
-        <hr class="h-[1px] bg-gray-600 ">
-            <p class="text-opacity-50 text-white text-center mt-[50px]"> Me siga nas Redes Sociais </p>
-            <span class="flex gap-5 justify-center my-5">
-                 <a target="_blank" href="https://www.instagram.com/leoczambrana/">
-                    <img src="./img/logoInsta.png" alt="">
-                 </a>
-                 <a target="_blank" href="">
-                    <img src="./img/logoWhats.png" alt="">
-                 </a>
-                 <a target="_blank" href="https://www.linkedin.com/in/leonardo-zambrana-857171226/">
-                    <img src="./img/logoLinkedin.png" alt="">
-                 </a>
-            </span>
-            <p class="text-white text-center text-opacity-50 "> Copyright &copy; 2022 Zambrana, Leonardo / Alves, Natanael - Todos direitos reservados</p>
+     <footer class="border-t border-bg-gray-600" style="background-image: url('./img/stars.PNG');">
+        <p class="text-opacity-50 text-white text-center mt-[50px]"> Me siga nas Redes Sociais </p>
+        <span class="flex gap-5 justify-center my-5">
+                <a target="_blank" href="https://www.instagram.com/leoczambrana/">
+                <img src="./img/logoInsta.png" alt="">
+                </a>
+                <a target="_blank" href="">
+                <img src="./img/logoWhats.png" alt="">
+                </a>
+                <a target="_blank" href="https://www.linkedin.com/in/leonardo-zambrana-857171226/">
+                <img src="./img/logoLinkedin.png" alt="">
+                </a>
+        </span>
+        <p class="text-white text-center text-opacity-50 "> Copyright &copy; 2022 Zambrana, Leonardo / Alves, Natanael - Todos direitos reservados</p>
     </footer>
 </body>
 </html>
