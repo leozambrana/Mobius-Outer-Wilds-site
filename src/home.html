@@ -62,33 +62,12 @@
             margin: 1rem;
         }
 
-        .go-to-top-btn {
-            position: fixed;
-            bottom: 0;
-            right: 0;
-            margin: 1rem;
-            border-radius: 50%;
-            background-color: #333333;
-            color: white;
-            width: 40px;
-            height: 40px;
-        }
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1;
-        }
-        
-        header nav {
-            min-height: 100px;
-        }
     </style>
 </head>
 <body>
-    <div class="top"/>
-    <header class="bg-black shadow-bottom">
-        <nav class=" flex justify-between items-center">
+    <div class="top">
+    <header class="bg-black shadow-bottom sticky top-0 z-10">
+        <nav class=" flex justify-between items-center min-h-[100px]">
             <button class="absolute">
                 <a href="">
                     <img class="scale-50" src="./img/mobius-logo-long_1.png" alt="Mobius">
@@ -124,7 +103,7 @@
                 <div class="grid grid-cols-2 items-center ml-8">
                     <div class="text-center ">
                         <h2 class="font-medium text-white text-2xl my-5 ">EXPLORE UM SISTEMA SOLAR COMO NUNCA ANTES VISTO</h2>
-                        <iframe  width="745" height="480" src="https://www.youtube.com/embed/2EnIpUkQ__M" title="OUTER WILDS | Steam Release Date Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                      
+                        <iframe width="745" height="480" src="https://www.youtube.com/embed/d6LGnVCL1_A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>          
                     </div>
 
                         <!-- Annapurna  -->  
@@ -163,7 +142,7 @@
                 
                 <!-- Plataformas -->
 
-                <div class="grid grid-cols-2 grid-rows-3 w-fit items-center text-center">
+                <div class="grid grid-cols-2 grid-rows-3 w-fit items-center text-center ml-8">
                     <h3 class="col-span-2 justify-self-center">DISPONÍVEL AGORA NA:</h3>                        
                     <img class=" justify-self-center h-[200px]" src="./img/ps4_logo-removebg-preview.png" alt="PS4 Logo">
                     <img class=" justify-self-center" src="./img/logoXbox.png"  alt="Xbox Logo">
@@ -173,8 +152,6 @@
                     <hr class="my-5 h-[1px] bg-gray-600 ">
 
                             <!-- Resumo Jogo -->
-
-                        <button class="flex m-auto" onclick="setOverlayVisible()">Álbum de fotos</button>
 
                         <div class="flex items-center">
                             <div class="ml-8">
@@ -187,21 +164,26 @@
                                 aventurar nos confins mais perigosos do espaço.
                             </p>
                             </div>
-                            <img class="m-auto" src="./img/Gif_fogueira_outer.gif" alt="Outer Wilds gif">
+                            <img class="m-auto rounded-md" src="./img/Gif_fogueira_outer.gif" alt="Outer Wilds gif">
                         </div>   
-                        <div class="mt-20">
-                            <h3 class="text-2xl font-extrabold ml-8 " > Um mundo que muda com o tempo </h3>
-                            <p class="ml-8 font-extralight">
+                        <div class="mt-20 flex">
+                            <div>
+                                <h3 class="text-2xl font-extrabold ml-8 " > Um mundo que muda com o tempo </h3>
+                                <p class="ml-8 font-extralight">
                                 Os planetas de Outer Wilds estão repletos de locais ocultos que mudam com o passar do tempo. <br>
                                 Visite uma cidade subterrânea antes que ela seja engolida pela areia subindo ou explore a crosta <br>
                                 de um planeta oco enquanto ele desmorona sob seus pés. Cada segredo é guardado por <br> ambientes 
                                 perigosos e desastres naturais à medida que o sistema solar fica fora de controle.
-                            </p>
-                            <div class="flex my-10 ml-8 gap-10">
-                                <img src="./img/GIF_Tornado.gif" alt="Tornado Outer Wilds">
-                                <img src="./img/Gif_Vale_incerto.gif" alt="Vale Incerto Outer Wilds">
-                            </div>    
+                                </p>
+                            </div> 
+
+                            <button class="flex m-auto" onclick="setOverlayVisible()">Álbum de fotos</button>
                         </div>
+
+                        <div class="flex my-10 ml-8 gap-10">
+                            <img src="./img/GIF_Tornado.gif" alt="Tornado Outer Wilds">
+                            <img src="./img/Gif_Vale_incerto.gif" alt="Vale Incerto Outer Wilds">
+                        </div>   
 
                         <!--Aventura que precisamos -->           
                     <h4 class=" text-2xl font-extrabold text-center mb-10">Esta é a aventura que todos precisamos</h4>
@@ -240,10 +222,11 @@
         <button class="btn-next text-white " onclick="nextImage()">></button>
     </div>
 
-    <button class="go-to-top-btn hidden" onclick="goToTop()">^</button>
+    <button class="go-to-top-btn hidden fixed bottom-0 right-0 m-4 rounded-full bg-[#333333] text-white w-[40px] h-[40px]" onclick="goToTop()">^</button>
 
     <script>
-        const images = ['./img/Gif_fogueira_outer.gif', './img/GIF_Tornado.gif', './img/Gif_Vale_incerto.gif'];
+        const images = ['./img/Gif_fogueira_outer.gif' ,'./img/ow-ashtwin.png', './img/ow-escapepod.png', './img/ow-giantsdeepruins.png' , './img/ow-shipinterior.png',
+         './img/ow-skeleton.png', './img/ow-village.png'];
 
         function setOverlayVisible() {
             document.querySelector('.overlay').classList.remove('hidden');
