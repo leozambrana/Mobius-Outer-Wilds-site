@@ -42,6 +42,12 @@ function goToTop() {
    window.addEventListener('scroll', handleAutoScrollEnd, false);
 }
 
+function handleSendEmailBtn() {
+   const subject = document.querySelector('#subject').value;
+   const message = document.querySelector('#message').value;
+   document.querySelector('.send-email-link').setAttribute('href', `mailto:support@mobiusdigitalgames.com?subject=${subject}&body=${message}`);
+}
+
 document.addEventListener('scroll', () => {
    document.querySelector('.go-to-top-btn').classList.remove('invisible');
 })

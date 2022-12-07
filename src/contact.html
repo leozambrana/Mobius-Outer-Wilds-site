@@ -7,7 +7,7 @@
     <title>Contact</title>
     <link rel="stylesheet" href="/dist/output.css">
 </head>
-<body>
+<body style="background-image: url('./img/stars.PNG');" class="flex flex-col min-h-screen backdrop-blur-[1px]">
     <header class="bg-black shadow-bottom sticky top-0 z-10">
         <nav class=" flex justify-between items-center min-h-[100px]">
             <button class="absolute">
@@ -36,29 +36,26 @@
 
     <!-- MAIN -->
 
-    <main style="background-image: url('./img/stars.PNG');">
+    <main class="flex-1 flex justify-center items-center">
         <div class="flex justify-evenly gap-10 text-white">
-            <div>
-                <h2>Suporte, Feedback, Bugs </h2>
-                <button class="block">Envie seu Problema</button>
-                <div class="italic text-base  ">
-                    <span class="text-red-500">*</span>
-                    <label for="email"> INDICA CAMPO OBRIGATÓRIO </label> 
-                    <form>
-                        <input class="bg-black rounded border-[2px] border-white border-opacity-50 hover:border-white  focus:text-white" type="text" id="email" placeholder=" *Email">
-                        <button class="bg-gray-600 rounded  text-white ">Subscribe</button>
+            <div class="flex flex-col gap-1">
+                <div class="text-base p-4 rounded-xl bg-slate-800 flex flex-col gap-2">
+                    <h2 class="text-xl">Suporte, Feedback, Bugs </h2>
+                    <form class="flex flex-col gap-2">
+                        <input class="bg-black rounded border-[2px] border-white border-opacity-50 hover:border-white placeholder:italic focus:text-white" type="text" id="subject" placeholder=" *Assunto">
+                        <textarea class="bg-black rounded border-[2px] min-h-[75px] border-white border-opacity-50 hover:border-white placeholder:italic focus:text-white" id="message" placeholder="Mensagem"></textarea>
+                        <button class="send-email-btn bg-gray-600 rounded text-white p-2" onclick="handleSendEmailBtn()">
+                            <a class="send-email-link">Abrir e-mail</a>
+                        </button>
                     </form>
                 </div> 
-            </div>
-            <div>
-                <h2>Oportunidade de Carreira</h2>
             </div>
         </div>
     </main>
 
      <!-- Footer -->
 
-     <footer class="border-t border-bg-gray-600" style="background-image: url('./img/stars.PNG');">
+     <footer class="border-t border-bg-gray-600">
             <p class="text-opacity-50 text-white text-center mt-[50px]"> Me siga nas Redes Sociais </p>
             <span class="flex gap-5 justify-center my-5">
                  <a target="_blank" href="https://www.instagram.com/leoczambrana/">
@@ -73,5 +70,7 @@
             </span>
             <p class="text-white text-center text-opacity-50 "> Copyright &copy; 2022 Zambrana, Leonardo / Alves, Natanael - Todos direitos reservados</p>
     </footer>
+    
+    <script src="./script.js"></script>
 </body>
 </html>
